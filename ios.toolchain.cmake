@@ -464,7 +464,7 @@ set(CMAKE_SYSTEM_FRAMEWORK_PATH
   ${CMAKE_OSX_SYSROOT}/System/Library/PrivateFrameworks
   ${CMAKE_OSX_SYSROOT}/Developer/Library/Frameworks)
 # Only search the specified iOS SDK, not the remainder of the host filesystem.
-set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 # This little macro lets you set any XCode specific property.
@@ -486,7 +486,7 @@ macro(find_host_package)
   set(IOS FALSE)
   find_package(${ARGN})
   set(IOS TRUE)
-  set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ONLY)
+  set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
   set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
   set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 endmacro(find_host_package)
